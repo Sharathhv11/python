@@ -1,4 +1,4 @@
-from music_player import music
+from music_player import *
 
 class Node:
     """defining the node structure that contains pointers and data feilds"""
@@ -56,12 +56,13 @@ class DoubleLinklist:
         a=self.search(name)[0]
         print(a)
         music_obj = music(a)
-        music_obj.play_music()
+        music_manager(music_obj)
+        
 
 
 
 def value_input():
-    inp1 = input("Enter song path")
+    inp1 = input("Enter song path :")
     inp2 = input("enter alias name for song :")
     return inp1,inp2
 def main():

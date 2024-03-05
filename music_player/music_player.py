@@ -27,13 +27,9 @@ class music:
 		"""this method stops the current music"""
 		pg.mixer.music.stop()
 
-
-
-if (__name__=="__main__"):
-	
-	def main():
+def music_manager(obj : music):
 		#creating object for music class y passing file path as constructer argument
-		obj = music("E:\music_player\musics\Arijit Singh  Main Tera Boyfriend.mp3")
+		
 
 		#this block of code manages the music player by playing pausing etc
 		while (True):
@@ -52,4 +48,9 @@ if (__name__=="__main__"):
 			
 			else:
 				print(f" {music_status} you must have entered the wrong choice")
-		main()
+
+
+
+if (__name__=="__main__"):
+	obj = music("E:\music_player\musics\Arijit Singh  Main Tera Boyfriend.mp3")
+	music_manager(obj)
