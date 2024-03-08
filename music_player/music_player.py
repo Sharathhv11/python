@@ -27,27 +27,29 @@ class music:
 		"""this method stops the current music"""
 		pg.mixer.music.stop()
 
-def music_manager(obj : music):
-		#creating object for music class y passing file path as constructer argument
-		
 
-		#this block of code manages the music player by playing pausing etc
-		while (True):
-			music_status=input("enter P-play , PA - pause , S - stop , UP - unpause :").lower()
+class music_manager:
+	def __init__(self,obj) -> None:
+		self.obj= obj
+	def music_status(self,music_status):
+		"""this method handels  the life cycyle of music like play pause and more .."""
+		if(music_status==1):
+			self.obj.play_music()
+		elif(music_status==2):
+			self.obj.pause_music()
 			
-			if(music_status=="p"):
-				obj.play_music()
-			elif(music_status=="pa"):
-				obj.pause_music()
-				
-			elif(music_status=="up"):
-				obj.unpause_music()
+		elif(music_status==3):
+			self.obj.unpause_music()
+
+		elif(music_status==4):
+			self.obj.stop_music()
 		
-			elif(music_status=="s"):
-				obj.stop_music()
+		else:
+			print(f" {music_status} you must have entered the wrong choice")
+			return
+		
 			
-			else:
-				print(f" {music_status} you must have entered the wrong choice")
+	
 
 
 

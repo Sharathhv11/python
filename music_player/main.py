@@ -11,6 +11,7 @@ class Node:
 class DoubleLinklist:
     def __init__(self) -> None:
         self.head = None
+        # self.tail=None
 
     def insert_end(self, path, name):
         node1 = Node(path, name)
@@ -56,7 +57,13 @@ class DoubleLinklist:
         a=self.search(name)[0]
         print(a)
         music_obj = music(a)
-        music_manager(music_obj)
+        music_manage = music_manager(music_obj)
+        while(True):
+            inp = int(input("enter 1-play , 2 - pause , 3 - stop , 4 - unpause :5-next music 6-previous music "))
+            if(inp>0 and inp<=4):
+                music_manage.music_status(inp)
+            elif(inp>4 and inp<=6):
+                pass
         
 
 
@@ -80,7 +87,7 @@ def main():
             case 4:
                 obj.music_play(input("play song name :"))
             case 5:
-                print(obj.search(input("Find")))
+                print(obj.search(input("Find : ")))
             case _:
                 print("you have entered a wrong choice!")
         
