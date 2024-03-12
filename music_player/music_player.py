@@ -9,10 +9,12 @@ class music:
 		#initializing the pygame module
 		pg.mixer.init()
 		#loading file to pygame module
-		pg.mixer.music.load(path)
+		self.path=path
+		
 	
-	def play_music(self):
+	def play_music(self,):
 		"""this method plays the loaded music"""
+		pg.mixer.music.load(self.path)
 		pg.mixer.music.play()
 		
 	def pause_music(self):
@@ -26,6 +28,9 @@ class music:
 	def stop_music(self):
 		"""this method stops the current music"""
 		pg.mixer.music.stop()
+	
+	def unload_music(self):
+		pg.mixer.music.unload()
 
 
 class music_manager:
@@ -37,12 +42,14 @@ class music_manager:
 			self.obj.play_music()
 		elif(music_status==2):
 			self.obj.pause_music()
-			
+
 		elif(music_status==3):
+			self.obj.stop_music()
+			
+		elif(music_status==4):
 			self.obj.unpause_music()
 
-		elif(music_status==4):
-			self.obj.stop_music()
+		
 		
 		else:
 			print(f" {music_status} you must have entered the wrong choice")
