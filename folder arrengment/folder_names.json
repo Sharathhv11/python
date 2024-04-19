@@ -1,0 +1,17 @@
+{
+    "py": "python",
+    "java": "java",
+    "class": "java",
+    "exc": "applications",
+    "c": "c programming",
+    "js": "web",
+    "html": "web",
+    "css": "web",
+    "pdf": "pdf folder",
+    "tmdx": "text maker",
+    "json": "json objects",
+    "png": "photo",
+    "txt": "text documnet",
+    "docx": "ms documnet",
+    "pmdx": "planmaker spread sheet"
+}
